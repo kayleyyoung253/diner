@@ -1,0 +1,13 @@
+{
+  "name": "kyounggr/328/diner",
+  "description": "My MVC Diner Application",
+  "authors": [
+    {
+      "name": "Kayley Young",
+      "email": "young.kayley@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
