@@ -1,3 +1,9 @@
+<!-- Kayley Young
+Job Application project
+SDEV 328
+01/20/24
+Controller php page
+-->
 <?php
 /*
  * Kayley Young
@@ -13,13 +19,26 @@ error_reporting(E_ALL);
 require_once ('vendor/autoload.php');
 
 //Instantiate Fat-Free framework (f3)
-$f3 = Base::instance();
+$f3 = Base::instance();  //instance method
 
 //Define a default route-invoking route method
 $f3->route('GET /', function() {
-    echo "My Diner";
+   // echo "My Diner";
+
+    //display a view page
+    $view = new Template();// template is a class from fat-free
+    echo $view->render('views/home.html');
+});
+
+//Define a breakfast route
+$f3->route('GET /breakfast', function() {
+    //echo "My breakfast";
+
+    //display a view page
+    $view = new Template();// template is a class from fat-free
+    echo $view->render('views/breakfast-menu.html');
 });
 // Run Fat-Free
-$f3->run();
+$f3->run(); //instance method
 
 
