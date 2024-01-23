@@ -38,6 +38,14 @@ $f3->route('GET /breakfast', function() {
     $view = new Template();// template is a class from fat-free
     echo $view->render('views/breakfast-menu.html');
 });
+//define a order formmroute
+$f3->route('GET /order1', function() {
+    // echo "My Diner";
+
+    //display a view page
+    $view = new Template();// template is a class from fat-free
+    echo $view->render('views/order1.html');
+});
 // Run Fat-Free
 $f3->run(); //instance method
 
