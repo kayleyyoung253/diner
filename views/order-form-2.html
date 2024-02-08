@@ -20,11 +20,17 @@
         <!-- get condiments -->
         <div class="form-group">
             <label class="col-sm-2 control-label">Select condiments</label>
+
             <div class="col-sm-4">
-                <label><input type="checkbox"
+                <repeat group="{{ @condiments }}" value="{{ @condiment }}">
+                <label>
+                    <input type="checkbox"
                               name="conds[]"
-                              value="ketchup"
-                > ketchup</label><br>
+                              value="{{ @condiment }}"
+                > {{ ucwords(@condiment) }}
+                </label><br>
+                </repeat>
+                <!--
                 <label><input type="checkbox"
                               name="conds[]"
                               value="mustard"
@@ -37,8 +43,10 @@
                               name="conds[]"
                               value="sriracha"
                 > sriracha</label><br>
+                -->
                 <!-- Display an error if there is one -->
             </div>
+
         </div>
 
         <div class="col-xs-1 ">
