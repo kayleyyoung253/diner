@@ -6,17 +6,14 @@
  */
 
 //return true if food is valid
-
-function validFood($food)
+class Validate
 {
-    if ( trim($food) == "")
-    return false;
-    if (!ctype_alpha($food))
-        return false;
-
-    return true;
-}
-function validMeal($meal)
-{
-    return in_array($meal, getMeals());
+    static function validFood($food)
+    {
+       return trim($food) != "";
+    }
+    static function validMeal($meal)
+    {
+        return in_array($meal, DataLayer::getMeals());
+    }
 }
