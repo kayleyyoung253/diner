@@ -10,8 +10,10 @@
 <div class="container">
     <h1>GRC Diner</h1>
     <h2>Thank you for your order!</h2>
-    <p>You ordered {{ @SESSION.food }} for {{ @SESSION.meal }}</p>
-    <p>Condiments:  {{ @SESSION.conds }}</p>
+    <p>You ordered {{ @SESSION.order->getFood() }} for {{ @SESSION.order->getMeal() }}</p>
+    <p>Condiments:  {{ @SESSION.order->getCondiments() }}</p>
+
+    <a href="{{ @BASE }}">Home Page</a>
 </div>
 </body>
 </html>
