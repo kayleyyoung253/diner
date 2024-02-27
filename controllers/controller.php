@@ -116,6 +116,9 @@ class Controller
     function summary()
     {
         //echo "Thank you for your order!";
+        //save order to databaseId
+        $orderId = $GLOBALS['dataLayer']->saveOrder($this->_f3->get('SESSION.order'));
+        $this->_f3->set('orderId', $orderId);
 
         // Display a view page
         $view = new Template();
@@ -123,7 +126,9 @@ class Controller
     }
     function view()
     {
-        //echo "Thank you for your order!";
+        //get the orders from the model
+        $orders = $GLOBALS['dataLayer']->getOrders();
+        $this->_f3->set('orders', $orders);
 
         // Display a view page
         $view = new Template();
